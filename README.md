@@ -38,7 +38,7 @@ Images are imput in the model in the form of vectors. we need to convert every i
 This model was trained on Imagenet dataset to perform image classification on 1000 different classes of images. However, our purpose here is not to classify the image but just get fixed-length informative vector for each image. This process is called automatic feature engineering.
 
 Hence, we just remove the last softmax layer from the model and extract a 2048 length vector (bottleneck features) for every image as follows:
-![Automatic feature Engineering] (https://miro.medium.com/max/2000/1*9VoYufkvd-hBxK3p2NEWmw.png)
+![Automatic feature Engineering](https://miro.medium.com/max/2000/1*9VoYufkvd-hBxK3p2NEWmw.png)
 
 We save all the bottleneck train features in a Python dictionary and save it on the disk using Pickle file, namely “encoded_train_images.pkl” whose keys are image names and values are corresponding 2048 length feature vector.Similarly we encode all the test images and save them in the file “encoded_test_images.pkl”.
 
@@ -55,13 +55,16 @@ For example:
 
 The input to our model is [x1, x2] and the output will be y, where x1 is the 2048 feature vector of that image, x2 is the input text sequence and y is the output text sequence that the model has to predict.
 
-![Partial Caption] (https://miro.medium.com/max/1400/1*ME49hZnlJDtkA4cWtZjKNg.jpeg)
-![Partial Caption wordtoix] (https://miro.medium.com/max/1032/1*6G1eDpwq11eRY4rhD0yXPg.jpeg)
-![Partial Caption after padding made each caption of max length] (https://miro.medium.com/max/1032/1*gefPePe1I2-9pryw3axP1A.jpeg)
+![Partial Caption](https://miro.medium.com/max/1400/1*ME49hZnlJDtkA4cWtZjKNg.jpeg)
+
+![Partial Caption wordtoix](https://miro.medium.com/max/1032/1*6G1eDpwq11eRY4rhD0yXPg.jpeg)
+
+![Partial Caption after padding made each caption of max length](https://miro.medium.com/max/1032/1*gefPePe1I2-9pryw3axP1A.jpeg)
 
 9. Model Architechture
 ![Model](https://miro.medium.com/max/2000/1*rfYN2EELhLvp2Van3Jo-Yw.jpeg)
-![Detailed] (https://miro.medium.com/max/2000/1*VGzSnYhyhpAAmGkSyOfeig.png)
+
+![Detailed](https://miro.medium.com/max/2000/1*VGzSnYhyhpAAmGkSyOfeig.png)
 
 Input_1 -> Partial Caption
 Input_2 -> Image feature vector
